@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Open Sans", "Inter", sans-serif;
+    }
+    nav {
+      display: flex;
+      background-color: #adb2c1;
+      color: #0a2664;
+      justify-content: space-evenly;
+      align-items: center;
+      padding: 10px 20px;
+    }
+    nav ul {
+      display: flex;
+      gap: 30px;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li a {
+      color: #0a2664;
+      text-decoration: none;
+    }
+
+    .active {
+      font-weight: 900;
+      padding-bottom: 5px;
+      border-bottom: 3px solid #0a2664;
+    }
+    nav img {
+      height: 70px;
+    }
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .content-wrapper h1 {
+      color: #0a2664;
+      font-family: "Montserrat", sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+    }
+
+    .contactus-section {
+      background-color: #f0f2f5;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .content-wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .contact-info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+      text-align: left;
+    }
+
+    .contact-card {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    .contact-card .icon {
+      font-size: 2.5rem;
+      color: #0a2664;
+      margin-bottom: 15px;
+    }
+
+    .contact-card h2 {
+      font-family: "Montserrat", sans-serif;
+      font-size: 1.5rem;
+      color: #0a2664;
+      margin: 0 0 10px 0;
+    }
+
+    .contact-card p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #333;
+      margin: 0;
+    }
+
+    .contact-card a {
+      color: #0a2664;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .contact-card a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-form-container {
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      margin-top: 50px;
+      text-align: left;
+    }
+
+    .contact-form-container h2 {
+      font-family: "Montserrat", sans-serif;
+      font-size: 2rem;
+      color: #0a2664;
+      margin-top: 0;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-family: "Open Sans", sans-serif;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-family: "Open Sans", sans-serif;
+      font-size: 1rem;
+      color: #333;
+      box-sizing: border-box;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: #0a2664;
+      box-shadow: 0 0 0 3px rgba(10, 38, 100, 0.2);
+      outline: none;
+    }
+
+    .submit-button {
+      display: block;
+      width: 100%;
+      padding: 15px 20px;
+      background-color: #0a2664;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      font-family: "Montserrat", sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .submit-button:hover {
+      background-color: #071e4d;
+      transform: translateY(-2px);
+    }
+
+    .map-container {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      margin-top: 50px;
+      margin-bottom: 50px;
+      overflow: hidden;
+    }
+
+    .map-container h2 {
+      font-family: "Montserrat", sans-serif;
+      font-size: 2rem;
+      color: #0a2664;
+      margin-top: 0;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .map-responsive {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+    }
+
+    .map-responsive iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    footer {
+      background-color: #adb2c1;
+      color: #0a2664;
+      padding: 50px 20px;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 40px;
+    }
+
+    .footer-logo {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .footer-logo img {
+      max-width: 150px;
+      height: auto;
+    }
+
+    .footer-cta {
+      flex: 2;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .footer-cta h2 {
+      font-size: 2.3rem;
+      margin-bottom: 5px;
+    }
+
+    .footer-cta h4 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: 10px;
+    }
+
+    .footer-cta button {
+      background: linear-gradient(to right, #4a90e2, #63b3ed);
+      border: none;
+      padding: 12px 30px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 10px;
+    }
+
+    .footer-cta button:hover {
+      background: linear-gradient(to right, #63b3ed, #4a90e2);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(74, 144, 226, 0.4);
+    }
+
+    .footer-links {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .footer-links ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-links li {
+      margin: 0;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      padding: 5px 0;
+      display: block;
+    }
+
+    .footer-links a:hover {
+      transform: translateX(5px);
+    }
+  </style>
+  <body>
+    <header>
+      <nav>
+        <div class="logo-container">
+          <img
+            src="https://sanpablo.cit.edu.ph/wp-content/uploads/2020/06/SPLogo.png"
+            alt="CIT School Logo"
+          />
+          <h3>We Offer the Best Education</h3>
+        </div>
+
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="branches.html">CIT Branches</a></li>
+          <li><a href="portal.html">Portal</a></li>
+          <li><a href="courses.html">Courses Offered</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contactus.html" class="active">Contact Us</a></li>
+          <li><a href="activities.html">Activities</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="contactus-section">
+        <div class="content-wrapper">
+          <h1>Get In Touch</h1>
+          <div class="contact-info-grid">
+            <div class="contact-card">
+              <div class="icon">📞</div>
+              <h2>Call Us</h2>
+              <p>
+                Landline: +63 049 503 3280<br />
+                Smart: 0946 110 2102<br />
+                Globe: 0915 903 3361
+              </p>
+            </div>
+            <div class="contact-card">
+              <div class="icon">✉️</div>
+              <h2>Write To Us</h2>
+              <p>
+                Have a question? We'd love to hear from you.
+                <br />
+                <a href="mailto:citsanpablo@cit.edu.ph"
+                  >citsanpablo@cit.edu.ph</a
+                >
+              </p>
+            </div>
+            <div class="contact-card">
+              <div class="icon">📍</div>
+              <h2>Visit Us</h2>
+              <p>
+                CIT San Pablo City<br />
+                73 J.P. Rizal Avenue,<br />
+                San Pablo City, Laguna 4000
+              </p>
+            </div>
+          </div>
+
+          <div class="map-container">
+            <h2>Find Us on the Map</h2>
+            <div class="map-responsive">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d61921.16705786653!2d121.31895399999999!3d14.07287!3m2!1i1024!2i768!4f13.1!2m1!1sCapellan%20Institute%20of%20Technology%2073%20J.P.%20RIZAL%20AVENUE%2C%20SAN%20PABLO%20CITY%2C%20LAGUNA!5e0!3m2!1sen!2sus!4v1761295990162!5m2!1sen!2sus"
+                width="600"
+                height="450"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+
+          <div class="contact-form-container">
+            <h2>Send Us a Message</h2>
+            <form action="#" method="POST">
+              <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" name="fullName" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" required />
+              </div>
+              <div class="form-group">
+                <label for="message">Your Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="6"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="submit-button">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-logo">
+          <img
+            src="https://sanpablo.cit.edu.ph/wp-content/uploads/2020/06/SPLogo.png"
+            alt="CIT School Logo"
+          />
+        </div>
+
+        <div class="footer-cta">
+          <h2>Experience Our Online Training</h2>
+          <h4>Click the button below to register online...</h4>
+          <button>Start Learning</button>
+        </div>
+
+        <div class="footer-links">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="branches.html">CIT Branches</a></li>
+            <li><a href="portal.html">Portal</a></li>
+            <li><a href="courses.html">Courses Offered</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contactus.html" class="active">Contact Us</a></li>
+            <li><a href="activities.html">Activities</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

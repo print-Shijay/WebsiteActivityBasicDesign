@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Open Sans", "Inter", sans-serif;
+    }
+    nav {
+      display: flex;
+      background-color: #adb2c1;
+      color: #0a2664;
+      justify-content: space-evenly;
+      align-items: center;
+      padding: 10px 20px;
+    }
+    nav ul {
+      display: flex;
+      gap: 30px;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li a {
+      color: #0a2664;
+      text-decoration: none;
+    }
+
+    .active {
+      font-weight: 900;
+      padding-bottom: 5px;
+      border-bottom: 3px solid #0a2664;
+    }
+
+    nav img {
+      height: 70px;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    footer {
+      background-color: #adb2c1;
+      color: #0a2664;
+      padding: 50px 20px;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 40px;
+    }
+
+    .footer-logo {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .footer-logo img {
+      max-width: 150px;
+      height: auto;
+    }
+
+    .footer-cta {
+      flex: 2;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .footer-cta h2 {
+      font-size: 2.3rem;
+      margin-bottom: 5px;
+    }
+
+    .footer-cta h4 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: 10px;
+    }
+
+    .footer-cta button {
+      background: linear-gradient(to right, #4a90e2, #63b3ed);
+      border: none;
+      padding: 12px 30px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 10px;
+    }
+
+    .footer-cta button:hover {
+      background: linear-gradient(to right, #63b3ed, #4a90e2);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(74, 144, 226, 0.4);
+    }
+
+    .footer-links {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .footer-links ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-links li {
+      margin: 0;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      padding: 5px 0;
+      display: block;
+    }
+
+    .footer-links a:hover {
+      transform: translateX(5px);
+    }
+
+
+
+    
+  h1,
+  h2,
+  h3 {
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #0a2664;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+    text-align: left;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  p {
+    line-height: 1.6;
+    text-align: justify;
+  }
+
+
+  .message-section {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    margin-bottom: 60px;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    margin-top: 50px;
+    text-align: left;
+  }
+
+  .message-section .placeholder-img {
+    flex-shrink: 0;
+    width: 45%;
+    text-align: center;
+  }
+
+
+  .message-section .placeholder-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .message-section .placeholder-img p {
+    margin-top: 10px;
+    font-size: 0.9em;
+    font-weight: 600;
+    line-height: 1.3;
+    text-align: center;
+  }
+
+
+  .history-section {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 40px;
+    margin: 60px 0;
+  }
+
+  .history-section .history-content {
+    text-align: justify;
+    border-right: 2px solid rgba(0, 0, 0, 0.08);
+    padding-right: 20px;
+  }
+
+  .history-section .grid-2-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+
+  .mission-section {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    margin: 60px 0;
+    text-align: center;
+  }
+
+  .mission-section h2 {
+    text-align: center;
+  }
+
+  .vision-community-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin: 60px 0;
+  }
+
+  .info-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 30px;
+  }
+
+  .info-card h2 {
+    text-align: center;
+  }
+
+  .content-wrapper {
+      max-width: 960px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+  </style>
+  <body>
+    <header>
+      <nav>
+        <div class="logo-container">
+          <img
+            src="https://sanpablo.cit.edu.ph/wp-content/uploads/2020/06/SPLogo.png"
+            alt="CIT School Logo"
+          />
+          <h3>We Offer the Best Education</h3>
+        </div>
+
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="branches.html">CIT Branches</a></li>
+          <li><a href="portal.html">Portal</a></li>
+          <li><a href="courses.html">Courses Offered</a></li>
+          <li><a href="about.html" class="active">About Us</a></li>
+          <li><a href="contactus.html">Contact Us</a></li>
+          <li><a href="activities.html">Activities</a></li>
+        </ul>
+      </nav>
+    </header>
+<main>
+    <div class="content-wrapper">
+      <h1>About Us</h1>
+
+      <section class="message-section">
+        <div class="placeholder-img">
+          <img src="images/president.webp" alt="President">
+          <h3>
+              <p><em>Engr. Benedicto A. Capellan</em><br>
+                <small>Founder & President</small></p>
+            </em></h3>
+        </div>
+        <div class="message-content">
+          <h2>President's Message</h2>
+          <p>On behalf of everyone at the CAPELLAN INSTITUTE OF TECHNOLOGY Inc. - CIT, I welcome you to the CIT Website,
+            your online gateway to our TVI Institution!
+            <br> <br>
+            Many schools are currently faced with the difficult and monstrous difficulties during this time. In order to
+            survive, we need to steer in a different direction that would lead us to improve our facilities and
+            technologies to lead us to academic outcomes for our institution and stakeholders, most especially our
+            students who struggle to continue learning.
+            <br><br>
+            Whether you are new to CIT, already acquainted with or belong to the Institution, and no matter where you
+            are in the Philippines or in the world, the CIT website holds a wealth of information and features to help
+            you get to know our Institution better.
+            The CIT Website covers all the locations of CIT: our Main Branch in the City of Pasig, National Capital
+            Region and our branches in the City of Antipolo and City of San Pablo.
+            <br><br>
+            Given its 24/7 presence, the CIT website is an emblem of the Institution's conviction that learning is a
+            continuous and lifelong process.
+            <br><br>
+            It is our hope that by exploring the CIT Website, you would be inspired to join us to know and learn more in
+            CIT.
+          </p>
+        </div>
+      </section>
+
+      <section class="message-section">
+        <div class="placeholder-img">
+          <img src="images/mamcandy.webp" alt="Mam Candy">
+          <h3>
+              <p><em>Engr. Ma. Candelaria C. Capellan</em><br>
+                <small>Vice President</small></p>
+          </h3>
+        </div>
+        <div class="message-content">
+          <h2>Vice President's Message</h2>
+          <p>
+            The Capellan Institute of Technology website is just one of the myriad proofs that "At CIT, we are
+            transforming minds and changing lives."
+            <br><br>
+            Besides being a provider of quality education for all for nearly three decades now, CIT is, in fact,
+            dedicated to be one of the pliable institutions in the country today.
+            <br><br>
+            Apart from representing our flexible learning conditions, the CIT website also mirrors the exploratory
+            nature of the Institution’s own reason for being: education.
+            <br><br>
+            With just a few clicks of your mouse and in your android mobile phone, you can find information on the
+            respective CIT locations, our course offerings, facilities and more of each of the CIT branches.
+            <br><br>
+            Interested student-applicants will find that the CIT Website allows for online applications and
+            registration. Online enrolment of CIT students can be done through the CIT Website as well. There is also a
+            Student Portal, a Parents Portal and an Employee Portal within the CIT Website, to allow for fast, constant,
+            anytime communication among the important stakeholders of the Institution.
+            <br><br>
+            On that note, I welcome everyone to the Capellan Institute of Technology Inc. website, with the call to keep
+            learning and keep exploring!
+          </p>
+        </div>
+      </section>
+      </section>
+
+      <section class="history-section">
+        <div class="grid-2-col">
+          <div class="history-content">
+            <h2>HOW WE STARTED</h2>
+            <p><strong>San Pablo City Branch</strong> was established by the Board of Trustee headed by the couple,
+              <strong>Engr. Benedicto A. Capellan</strong> and <strong>Mrs. Candelaria C. Capellan</strong> last June
+              2006.
+              <br><br>
+              The branch offered different courses duly registered with <strong>TESDA</strong> such as automotive
+              servicing, electronics, computer hardware, tourism and electrical courses.
+              <br><br>
+              The San Pablo City Branch is led by the youngest son, <strong>Mr. Benedicto C. Capellan Jr.</strong> as
+              the Assistant Technical Director who graduated in Far Eastern Air Transport Inc. (FEATI University) with a
+              course of Bachelor of Science in Industrial Education. He is a LET passer and also a
+              <strong>TESDA</strong> qualified Trainer in Electrical Installation and Maintenance NC II and other
+              programs.
+            </p>
+          </div>
+          <div class="history-content-more">
+            <p>His wife, <strong>Mrs. Arlyn O. Capellan</strong> serves as the Assistant Registrar and graduated with
+              the course of Bachelor of Science in Business Management in San Sebastian College.
+              <br><br>
+              <strong>The objective of this Institution is to extend the service of our institution to the people of San
+                Pablo City and other municipalities near the city.</strong>
+              <br><br>
+              The institution intends to prepare the <strong>knowledge, skills and attitude (K.S.A.)</strong> of the
+              students towards the real life and requirement in the industry and to teach them on how to reach for their
+              dreams in life by establishing their self-confidence and love for learning.
+              <br><br>
+              Now, it has extended services to include the <strong>Senior High School Technical-Vocational and
+                Livelihood (TVL) Track with Industrial Arts strand, Home Economics (HE) strand and Information
+                Communication and Technology (ICT) strand.</strong>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="mission-section">
+        <h2>Mission Statement</h2>
+        <p>
+
+          <strong>We are an educational institution</strong> that aims to provide the Filipino youth with competitive
+          skills in the technological workplace.
+          <br><br>
+          <strong>We are committed</strong> to the preparation of our youth to the existing and future challenges
+          brought by the advancement of global science and technology by providing them with the adequate technical
+          instruction and training.
+          <br><br>
+          <strong>We recognize</strong> that our youth are the principal prime movers of the country. As such, we focus
+          on their complete personal development and inculcate the values of professionalism in their related fields.
+          <br><br>
+          <strong>We appreciate</strong> the parents' role in the upbringing of their children to be responsible and
+          useful citizen of this nation. We continuously work with them hand-in-hand in achieving this goal by providing
+          their children with affordable world-class education.
+          <br><br>
+          <strong>We answer</strong> to the government's call in providing its citizenry with technical knowledge as the
+          nation plunges into global competition. As such, we shall provide the nation and the international community
+          with their required skilled manpower.
+        </p>
+      </section>
+
+      <section class="vision-community-section">
+        <div class="info-card">
+          <h2>Vision Statement</h2>
+          <p><strong>CAPELLAN INSTITUTE OF TECHNOLOGY</strong> shall be the leading technical-vocational education and
+            training provider of progams in the information and communications technology, electronics, electrical,
+            automotive and tourism, in the Cities of Pasig, San Pablo and Antipolo, and in other surrounding provinces
+            in the Philippines by Year 2025.​</p>
+        </div>
+        <div class="info-card">
+          <h2>School Community</h2>
+          <p>Our school community strongly supports school events by participating, volunteering and donating. We
+            inculcate in each student the values of camaraderie and filial relationships in the school creating a
+            support system outside of the house.
+            <br><br>
+            The trainers act as their advisers and motivators to bring out the best in each one. From then on, our
+            students have developed a deeply rooted relationship among each other and a strong personality ready to face
+            the challenges of the industry they chose to be in.​
+          </p>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-logo">
+          <img
+            src="https://sanpablo.cit.edu.ph/wp-content/uploads/2020/06/SPLogo.png"
+            alt="CIT School Logo"
+          />
+        </div>
+
+        <div class="footer-cta">
+          <h2>Experience Our Online Training</h2>
+          <h4>Click the button below to register online...</h4>
+          <button>Start Learning</button>
+        </div>
+
+        <div class="footer-links">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="branches.html">CIT Branches</a></li>
+            <li><a href="portal.html">Portal</a></li>
+            <li><a href="courses.html">Courses Offered</a></li>
+            <li><a href="about.html" class="active">About Us</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+            <li><a href="activities.html">Activities</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

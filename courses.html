@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Open Sans", "Inter", sans-serif;
+    }
+    nav {
+      display: flex;
+      background-color: #adb2c1;
+      color: #0a2664;
+      justify-content: space-evenly;
+      align-items: center;
+      padding: 10px 20px;
+    }
+    nav ul {
+      display: flex;
+      gap: 30px;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li a {
+      color: #0a2664;
+      text-decoration: none;
+    }
+
+    .active {
+      font-weight: 900;
+      padding-bottom: 5px;
+      border-bottom: 3px solid #0a2664;
+    }
+
+    nav img {
+      height: 70px;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    footer {
+      background-color: #adb2c1;
+      color: #0a2664;
+      padding: 50px 20px;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 40px;
+    }
+
+    .footer-logo {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .footer-logo img {
+      max-width: 150px;
+      height: auto;
+    }
+
+    .footer-cta {
+      flex: 2;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .footer-cta h2 {
+      font-size: 2.3rem;
+      margin-bottom: 5px;
+    }
+
+    .footer-cta h4 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: 10px;
+    }
+
+    .footer-cta button {
+      background: linear-gradient(to right, #4a90e2, #63b3ed);
+      border: none;
+      padding: 12px 30px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 10px;
+    }
+
+    .footer-cta button:hover {
+      background: linear-gradient(to right, #63b3ed, #4a90e2);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(74, 144, 226, 0.4);
+    }
+
+    .footer-links {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .footer-links ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-links li {
+      margin: 0;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      padding: 5px 0;
+      display: block;
+    }
+
+    .footer-links a:hover {
+      transform: translateX(5px);
+    }
+
+    #courses {
+      text-align: center;
+      padding: 50px 20px;
+      background-color: #f4f6f9;
+    }
+
+    #courses h1 {
+      font-size: 2.8rem;
+      color: #0a2664;
+      font-family: "Montserrat", sans-serif;
+      margin-bottom: 10px;
+    }
+
+    #courses h3 {
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: #555;
+      margin-bottom: 40px;
+    }
+
+    .card {
+      display: flex;
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto 50px;
+      background: white;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .left {
+      flex: 1;
+    }
+
+    .right {
+      flex: 2;
+      padding: 30px;
+    }
+
+    .enroll-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .enroll-card img {
+      height: 70%;
+      width: 100%;
+      object-fit: cover;
+      background-color: #e0e0e0; /* Placeholder color */
+    }
+
+    .enroll-card .content {
+      height: 30%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      background-color: #0a2664;
+      color: white;
+    }
+
+    .enroll-card h2 {
+      margin: 0 0 20px 0;
+      font-size: 1.8rem;
+    }
+
+    .enroll-card button {
+      background: linear-gradient(to right, #4a90e2, #63b3ed);
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .enroll-card button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(74, 144, 226, 0.4);
+    }
+
+    .offered-courses {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .offered-courses h2 {
+      font-size: 2rem;
+      color: #0a2664;
+      margin-bottom: 30px;
+    }
+
+    .courses {
+      display: flex;
+      justify-content: space-around;
+      gap: 20px;
+    }
+
+    .courses > div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .courses i {
+      font-size: 2.5rem;
+      color: #4a90e2;
+      margin-bottom: 15px;
+    }
+
+    .courses h3 {
+      font-size: 1.2rem;
+      color: #0a2664;
+      margin-bottom: 15px;
+    }
+
+    .courses ul {
+      padding-left: 10px;
+      margin: 0;
+      text-align: left;
+    }
+
+    .courses li {
+      color: #555;
+      margin-bottom: 8px;
+    }
+
+    .vertical-line {
+      width: 1px;
+      background-color: #e0e0e0;
+      align-self: stretch;
+    }
+  </style>
+  <body>
+    <header>
+      <nav>
+        <div class="logo-container">
+          <img
+            src="https://sanpablo.cit.edu.ph/wp-content/uploads/2020/06/SPLogo.png"
+            alt="CIT School Logo"
+          />
+          <h3>We Offer the Best Education</h3>
+        </div>
+
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="branches.html">CIT Branches</a></li>
+          <li><a href="portal.html">Portal</a></li>
+          <li><a href="courses.html" class="active">Courses Offered</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contactus.html">Contact Us</a></li>
+          <li><a href="activities.html">Activities</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="courses">
+        <h1>Our Courses</h1>
+        <h3>Select a desired branch to enroll</h3>
+
+        <div class="card" style="text-align: left">
+          <div class="left">
+            <div class="enroll-card">
+              <img
+                src="https://i1.wp.com/sanpablo.cit.edu.ph/wp-content/uploads/2020/08/CITSPC-SHS.png?fit=300%2C300&ssl=1"
+                alt=""
+              />
+              <div class="content">
+                <h2>Senior High School</h2>
+                <button>Enroll Now!</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="right">
+            <div class="offered-courses">
+              <h2>Courses Offered</h2>
+              <div class="courses" style="text-align: center">
+                <div>
+                  <i class="fas fa-computer"></i>
+                  <h3>ICT Strand</h3>
+                  <ul>
+                    <li>Computer Systems Servicing</li>
+                  </ul>
+                </div>
+                <div class="vertical-line"></div>
+                <div>
+                  <i class="fas fa-utensils"></i>
+                  <h3>Home Economics Strand</h3>
+                  <ul>
+                    <li>Housekeeping</li>
+                    <li>Front Office Services</li>
+                    <li>Food and Beverage Services</li>
+                    <li>Bread and Pastry Production</li>
+                  </ul>
+                </div>
+                <div class="vertical-line"></div>
+                <div>
+                  <i class="fas fa-gears"></i>
+                  <h3>Industrial Arts</h3>
+                  <ul>
+                    <li>Electrical Installation and Maintenance</li>
+                    <li>Electronics Product Assembly and Servicing</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card" style="text-align: left">
+          <div class="left">
+            <div class="enroll-card">
+              <img
+                src="https://i1.wp.com/sanpablo.cit.edu.ph/wp-content/uploads/2020/08/CITSPC-TVET.png?fit=300%2C300&ssl=1"
+                alt=""
+              />
+              <div class="content">
+                <h2>Senior High School</h2>
+                <button>Enroll Now!</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="right">
+            <div class="offered-courses">
+              <h2>Courses Offered</h2>
+              <div class="courses" style="text-align: center">
+                <div>
+                  <i class="fas fa-box"></i>
+                  <h3>TVET Program</h3>
+                  <ul>
+                    <li>Housekeeping NC II</li>
+                    <li>Food and Beverages Services NC II</li>
+                    <li>Electronic Parts and Assembly Servicing NC II</li>
+                    <li>Automotive Servicing NC I</li>
+                    <li>Automotive Servicing NC II</li>
+                    <li>Computer Systems Servicing NC II</li>
+                    <li>Bookkeeping NC III</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-container">
+        <div class="footer-logo">
+          <img
+            src="https://sanpablo.cit.edu.ph/wp-content/uploads/2020/06/SPLogo.png"
+            alt="CIT School Logo"
+          />
+        </div>
+
+        <div class="footer-cta">
+          <h2>Experience Our Online Training</h2>
+          <h4>Click the button below to register online...</h4>
+          <button>Start Learning</button>
+        </div>
+
+        <div class="footer-links">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="branches.html">CIT Branches</a></li>
+            <li><a href="portal.html">Portal</a></li>
+            <li><a href="courses.html" class="active">Courses Offered</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+            <li><a href="activities.html">Activities</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
